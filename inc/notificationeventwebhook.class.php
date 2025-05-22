@@ -179,14 +179,14 @@ static public function extraRaise($params) {
 									case 1: // No Authentication
 									$headers = 
 										[
-										'Content-type: application/json'
+										'Content-type: application/json-patch+json'
 										];
 									break;
 
 									case 2: // Basic Authentication
 									$headers = 
 										[
-										'Content-type: application/json',
+										'Content-type: application/json-patch+json',
 										'Authorization: Basic '.$webhook_infos['additionnaloption']['user'] .":".$webhook_infos['additionnaloption']['secret']
 										];
 									break;
@@ -194,7 +194,7 @@ static public function extraRaise($params) {
 									case 3: // Basic Authentication with base64 encoding
 									$headers = 
 										[
-										'Content-type: application/json',
+										'Content-type: application/json-patch+json',
 										'Authorization: Basic '.base64_encode(htmlspecialchars_decode($webhook_infos['additionnaloption']['user']).":".htmlspecialchars_decode($webhook_infos['additionnaloption']['secret']))
 										];
 									break;
